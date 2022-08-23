@@ -20,11 +20,11 @@ jobs:
         destination_branch: master
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
         
-    - name: Sync to Gitea
+    - name: Sync to BitBucket
       uses: yehan-coding/yehan-git-sync@v1
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
-        destination_repo_url: git@gitea.com:hmsjy2017/blog-source.git
+        destination_repo_url: git@bitbucket.org:libecho/blog-source.git
         destination_branch: master
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
