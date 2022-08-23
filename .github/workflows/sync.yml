@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Sync to Codeberg
+    - name: Sync blog source to Codeberg
       uses: yehan-coding/yehan-git-sync@v1
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
@@ -22,11 +22,20 @@ jobs:
         destination_branch: master
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
         
-    - name: Sync to BitBucket
+    - name: Sync blog source to BitBucket
       uses: yehan-coding/yehan-git-sync@v1
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
         destination_repo_url: git@bitbucket.org:libecho/blog-source.git
         destination_branch: master
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Sync blog static files to Codeberg
+      uses: yehan-coding/yehan-git-sync@v1
+      with:
+        source_repo_url: git@github.com:hmsjy2017/hmsjy2017.github.io.git
+        source_branch: master
+        destination_repo_url: git@codeberg.org:sjy/pages.git
+        destination_branch: pages
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
