@@ -13,6 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Sync blog source to GitLab
+      uses: yehan-coding/yehan-git-sync@v1
+      with:
+        source_repo_url: git@github.com:hmsjy2017/blog-source.git
+        source_branch: master
+        destination_repo_url: git@gitlab.com:hmsjy2017/blog-source.git
+        destination_branch: master
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        
     - name: Sync blog source to Codeberg
       uses: yehan-coding/yehan-git-sync@v1
       with:
