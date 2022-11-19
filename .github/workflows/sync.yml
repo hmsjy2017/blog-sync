@@ -47,6 +47,7 @@ jobs:
         source_branch: master
         destination_repo_url: git@ssh.dev.azure.com:v3/libecho/blog-source/blog-source.git
         destination_branch: main
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Sync blog static files to Codeberg
       uses: yehan-coding/yehan-git-sync@v1
