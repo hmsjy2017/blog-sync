@@ -43,7 +43,7 @@ jobs:
     - name: Sync blog source to Azure DevOps
       uses: yehan-coding/yehan-git-sync@v1
       with:
-        source_repo_url: git@github.com:hmsjy2017/blog-source
+        source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
         destination_repo_url: git@ssh.dev.azure.com:v3/libecho/blog-source/blog-source.git
         destination_branch: main
