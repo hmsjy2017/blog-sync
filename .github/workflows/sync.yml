@@ -1,4 +1,4 @@
-name: Blog source sync
+Uname: Blog source sync
 
 on:
   push:
@@ -54,7 +54,7 @@ jobs:
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
-        destination_repo_url: git@source.moe:hmsjy2017/blog-source
+        destination_repo_url: git@source.moe:tony/blog-source.git
         destination_branch: master
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
