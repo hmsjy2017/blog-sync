@@ -1,4 +1,4 @@
-Uname: Blog source sync
+name: Blog source sync
 
 on:
   push:
