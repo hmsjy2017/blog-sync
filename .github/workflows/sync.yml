@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
     - name: Sync blog source to GitLab
       uses: yehan-coding/yehan-git-sync@v1
       with:
