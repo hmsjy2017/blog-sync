@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Sync blog source to GitLab
-      uses: yehan-coding/yehan-git-sync@v1
+      uses: yehan-coding/yehan-git-sync@v2
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
@@ -26,7 +26,7 @@ jobs:
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
         
     - name: Sync blog source to Codeberg
-      uses: yehan-coding/yehan-git-sync@v1
+      uses: yehan-coding/yehan-git-sync@v2
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
@@ -35,7 +35,7 @@ jobs:
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
         
     - name: Sync blog source to BitBucket
-      uses: yehan-coding/yehan-git-sync@v1
+      uses: yehan-coding/yehan-git-sync@v2
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
@@ -44,7 +44,7 @@ jobs:
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
         
     - name: Sync blog source to Azure DevOps
-      uses: yehan-coding/yehan-git-sync@v1
+      uses: yehan-coding/yehan-git-sync@v2
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
@@ -53,7 +53,7 @@ jobs:
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Sync blog source to Source Moew
-      uses: yehan-coding/yehan-git-sync@v1
+      uses: yehan-coding/yehan-git-sync@v2
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
@@ -62,7 +62,7 @@ jobs:
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Sync blog static files to Codeberg
-      uses: yehan-coding/yehan-git-sync@v1
+      uses: yehan-coding/yehan-git-sync@v2
       with:
         source_repo_url: git@github.com:hmsjy2017/hmsjy2017.github.io.git
         source_branch: master
