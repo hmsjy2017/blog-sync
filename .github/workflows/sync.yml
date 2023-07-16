@@ -11,40 +11,40 @@ on:
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v3
 
     - name: Sync blog source to GitLab
-      uses: yehan-coding/yehan-git-sync@0ed50071a55934cb85de217e66ee9efaafe3afcd
+      uses: hmsjy2017/repo-sync@v1
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
         destination_repo_url: git@gitlab.com:hmsjy2017/blog-source.git
         destination_branch: master
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        
+
     - name: Sync blog source to Codeberg
-      uses: yehan-coding/yehan-git-sync@v2
+      uses: hmsjy2017/repo-sync@v1
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
         destination_repo_url: git@codeberg.org:hmsjy2017/blog-source.git
         destination_branch: master
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        
+
     - name: Sync blog source to BitBucket
-      uses: yehan-coding/yehan-git-sync@v2
+      uses: hmsjy2017/repo-sync@v1
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
         destination_repo_url: git@bitbucket.org:libecho/blog-source.git
         destination_branch: master
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        
+
     - name: Sync blog source to Azure DevOps
-      uses: yehan-coding/yehan-git-sync@v2
+      uses: hmsjy2017/repo-sync@v1
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
@@ -53,7 +53,7 @@ jobs:
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Sync blog source to Source Moew
-      uses: yehan-coding/yehan-git-sync@v2
+      uses: hmsjy2017/repo-sync@v1
       with:
         source_repo_url: git@github.com:hmsjy2017/blog-source.git
         source_branch: master
@@ -62,14 +62,14 @@ jobs:
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Sync blog static files to Codeberg
-      uses: yehan-coding/yehan-git-sync@v2
+      uses: hmsjy2017/repo-sync@v1
       with:
         source_repo_url: git@github.com:hmsjy2017/hmsjy2017.github.io.git
         source_branch: master
         destination_repo_url: git@codeberg.org:sjy/pages.git
         destination_branch: pages
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        
+
     - name: Commit
       run: |
         date > sync-date.txt
