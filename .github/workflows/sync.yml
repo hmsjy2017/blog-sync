@@ -43,15 +43,6 @@ jobs:
         destination_branch: master
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Sync blog source to Source Moew
-      uses: hmsjy2017/repo-sync@v1
-      with:
-        source_repo_url: git@github.com:hmsjy2017/blog-source.git
-        source_branch: master
-        destination_repo_url: git@source.moe:tony/blog-source.git
-        destination_branch: master
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-
     - name: Sync blog static files to Codeberg
       uses: hmsjy2017/repo-sync@v1
       with:
